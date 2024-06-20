@@ -5,62 +5,65 @@
         // Primitive Value Types
         var firstName = 'Alisha'; // String
         var lastName = 'Rizvi'
-        var age = 25; // Number
-        var isADev = true; // Boolean
-        var un = undefined; // Undefined is a value type that JS will give you when there is no declared or assigned value
-        var n = null; // Programmer's representation of nothing
-        var notANumber = NaN; // Not A Number - This is provided when you try to process a mathematical equations and the result is not a valid number
+        var age = 44; // Number
+        var names = ['John' , 'Ann' , 'Bob' , 'Frank' , 'Jane' , 'Jimmy' , 'Billy' , 'Julie' , 'Will'];
 
-        var nothing;
-        var another;
-        var oneMore;
+        // Comparison Operators - Return a boolean based on the result of your comparison
+        // console.log(age > 30);
+        // console.log(age < 30);
+        // console.log(age == 44);
+        // console.log(age == '44'); 
+        // // Double equal checks only value
+        // console.log(age === 44);
+        // // Triple equals check both value and type
 
-        // console.log(age); // Using a variable within your code is called a reference 
+        // console.log(age>= 40);
+        // console.log(age<= 40);
 
-        // age = age + 1;
-        // age += 5; // Increase a variable by any numerical amount
-        age++; // Increase a variable by one
+        // console.log(age != 43);
+        // console.log(age !== 43);
 
-        // console.log(age);
+        // Falsey Values
+        // 0, null, undefined, '', NaN, false
 
-        age--; // Decrease number by one
+        // Logical Operators - Return a value on the left or right side of the operator
+        // Which value is equated is based on truth (thruthy vs falsey)
+        // console.log(0 || null || '' || -5 || undefined);
+        // // If anyone of these is true, then perform some action
 
-        // console.log(age);
+        // console.log(1 && age && 100 && null);
 
-        // age *= 5;
+        // console.log(!'');
 
-        var fullName = firstName + ' ' + lastName;
+        var firstName = 'Alisha'; // String
+        var lastName = 'Rizvi'
+        var age = 44; // Number
+        var names = ['John' , 'Ann' , 'Bob' , 'Frank' , 'Jane' , 'Jimmy' , 'Billy' , 'Julie' , 'Will'];
+        var users = ['Bob' , 99, 'Ann' , 35, 'Billy' , 45]
+        var oldEnough = age >= 21; // true
 
-        var names = ['John' , 'Ann' , 'Bob' , 'Frank' , 'Jane' , 'Jimmy' , 'Billy' , 'Julie' , 'Will']; // Array
-        var ages = [30, 24, 55, 99];
+        // Conditionals - trigger if the VALUE is a truthy value to the parentheses is a truthy value
+        if (firstName && lastName) {
+                console.log('Received your full name!');
+        } else if (!firstName) {
+                console.log('You must provide your full name!');
+        } else if (!lastName) {
+                console.log("You must provide your last name!")
+        }
+        else {
+                console.log('You must provide your full name!');
+        } 
+        
+        if (oldEnough) {
+                console.log('Welcome');
+                // Web API - Browser Toolset that we can access from within our JS
+                alert('Welcome ' + firstName);
+        } else {
+                console.log('They cannot enter');
+                alert('No chance...');
+        }
+        
+ 
 
 
-        // names.push('Susan');
 
-        // console.log(names);
-
-        // names.unshift('Eli');
-
-        console.log(names);
-
-        // names.pop();
-        names.shift();
-
-        console.log(names);
-
-        names.splice(5, 1);
-
-
-
-
-        // console.log(names[names.length - 1]);
-
-        // console.log(names);
-
-        // names[1] = 'Joe';
-
-        // console.log(names);
-
-        // ages[2]+= 10;
-
-        // console.log(ages);
