@@ -1,48 +1,81 @@
+/*
+Create a function that takes 3 arguments
+-The first and second argument will be a number
+-The third argument will be a mathematical operator (+, -, *, /)
 
-        var names = ['John' , 'Ann' , 'Bob' , 'Frank' , 'Jane' , 'Jimmy' , 'Billy' , 'Julie' , 'Will'];
-        var users = ['Bob' , 99, 'Ann' , 35, 'Billy' , 45];
+Example: If the operator  is a '+' then you will add the two numbers together and console log the sum */
 
-        // Print a count from 1 to 10
+// Call your function 4 times with different numbers and operators to confirm that it is working correctly 
 
-        for (var count = 1; count <= 10; count++) {
-        console.log(count);
+// Create a variable that stores a DOM selector of the body
+const body = document.body;
+// Set the background color of the body 
+body.style.backgroundColor
+
+function calculate (num1, num2, operator) {
+        console.log(num1);
+        var result;
+
+        if (operator === '+') {
+                console.log(num1 + num2);
+        } else if (operator === '_') {
+                console.log(num1 - num2);
+        } else if (operator === '*') {
+                console.log(num1 * num2);
+        } else if (operator === '/') {
+                console.log(num1 / num2);
+        }             
+}
+
+
+
+calculate(10, 20, '+');
+calculate(7, 89, '_');
+calculate(25, 50, '*');
+calculate(9, 3, '/');
+
+
+// console.log(calculate(10, 5, '+'));
+
+//Another way to do above 
+
+function calculate(num1, num2, operator) {
+        switch(operator) {
+                case '+':
+                        console.log(num1 + num2);
+                        break;
+                case '_':
+                        console.log(num1 - num2);
+                        break;
+                case '*':
+                        console.log(num1 * num2);
+                        break;
+                case '/':
+                        console.log(num1 / num2);
+                        break;
+                default:
+                        console.log('You must provide a valid operator');
         }
+}
 
-        // function myFirstFunc() {
-//   console.log('function has been called');
-// }
+function add(num1, num2) {
+        return 'something else';
+}
 
-// myFirstFunc();
-
-// function add(num1, num2) {
-//   console.log(num1 + num2);
-// }
-
-// add(5, 10);
-
-// add(30, 27);
-
-// function printValues(num, name, boolean, another) {
-//   console.log(another);
-// }
-
-// printValues(10, 'Allen', false, 'another');
-
-// const someStr = 'some string';
-
-// console.log(someStr[6]);
-
-function printNames(names) {
-        for (const name of names) {
-          console.log(name);
+function calculate(num1, num2, operator) {
+        switch(operator) {
+                case '+':
+                 return num1 + num2;
+                case '-':
+                 return num1 - num2;
+                case '*':
+                 return num1 * num2;
+                case '/':
+                 return num1 / num2;
+                default:
+                 return 'You must provide a valid operator';
         }
-      }
-      
-      // printNames(['Bob', 'Jimmy', 'Julie']);
-      
-      // printNames(['Jake', 'Frank', 'Katie']);
-      
-      const someName = 'JD';
-      const h1 = document.querySelector('h1');
-      
-      h1.innerText = someName;
+}
+
+const sum = calculate(10, 20, '+');
+console.log(sum);
