@@ -1,14 +1,17 @@
-let count = 10;
+let count = 5;
 const h1 = document.querySelector('h1');
+const modal = document.querySelector('.modal');
+const closeBtn = document.querySelector('#close-modal');
 
-function endGame () {
-    alert('Game Over!');
+
+function endGame() {
+    modal.classList.remove('hide');
 }
 
 const interval = setInterval(function () {
     count--;
 
-    h1.textContent = 'Count: ' + count;
+    h1.textContent = 'Count:' + count;
 
     if (!count) {
         clearInterval(interval);
@@ -16,6 +19,13 @@ const interval = setInterval(function () {
     }
 }, 1 * 1000);
 
-// setTimeout(function() {
-//     console.log('time is up!');
-// }, 8 * 1000);
+function closeMondal() {
+    modal.classList.add('hide');
+}
+
+document.body.addEventListener('click', closeMondal);
+
+modal.addEventListener('click', function (eventObj) {
+    eventObj.stopPropagation();
+});
+
