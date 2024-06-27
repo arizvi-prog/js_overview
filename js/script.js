@@ -1,31 +1,21 @@
-let count = 5;
-const h1 = document.querySelector('h1');
-const modal = document.querySelector('.modal');
-const closeBtn = document.querySelector('#close-modal');
+const ul = document.querySelector('ul');
+const output = document.querySelector('#output');
 
 
-function endGame() {
-    modal.classList.remove('hide');
+function doSomething(eventObj) {
+  output.innerText = eventObj.target.innerText;
+//   lis.forEach(function(li) {
+//     li.style.background = '555';
+//   });
+
+  eventObj.target.style.background = 'red';
 }
 
-const interval = setInterval(function () {
-    count--;
 
-    h1.textContent = 'Count:' + count;
+  ul.addEventListener('click', doSomething);
 
-    if (!count) {
-        clearInterval(interval);
-        endGame();
-    }
-}, 1 * 1000);
+// const fruits = ['orange', 'apple', 'grape'];
 
-function closeMondal() {
-    modal.classList.add('hide');
-}
-
-document.body.addEventListener('click', closeMondal);
-
-modal.addEventListener('click', function (eventObj) {
-    eventObj.stopPropagation();
-});
-
+// fruits.forEach(function (li) {
+//     console.log(li);
+// })
