@@ -1,21 +1,31 @@
-const ul = document.querySelector('ul');
-const output = document.querySelector('#output');
+// const someObject = {
+//   innerText: `Enter -13`
+// }
+
+// // Grab/Target the h1 element by its id
+// const output = document.getElementById('key-output');
 
 
-function doSomething(eventObj) {
-  output.innerText = eventObj.target.innerText;
-//   lis.forEach(function(li) {
-//     li.style.background = '555';
-//   });
 
-  eventObj.target.style.background = 'red';
-}
+// function keyPressed(eventObj) {
+//   // Print the character(word) value of the key that was pressed 
+//   console.log(eventObj.key);
+
+//   // Set the text of the h1 to something like 'Enter-13'
+//   output.innerText = eventObj.key + ' - ' + eventObj.keyCode;
 
 
-  ul.addEventListener('click', doSomething);
+//   // Checks if enter key was pressed
+//   if (eventObj.keyCode === 13) {
+//     console.log(eventObj.key);
+//     console.log('You have pressed the enter key');
+//   }
+// }
 
-// const fruits = ['orange', 'apple', 'grape'];
+// document.addEventListener('keydown', keyPressed);
 
-// fruits.forEach(function (li) {
-//     console.log(li);
-// })
+// function test() {
+//   console.log(num);
+// }
+
+// test(10);
