@@ -1,22 +1,31 @@
-const apiKey = '0acc098a64b3bd77fd4981e796d05c10';
+const weatherBtn = document.querySelector('#weather-btn');
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=${apiKey}&units=imperial`;
+function outputWeather() {
+  const cityInput = document.querySelector('#city-input');
+  const apiKey = '0acc098a64b3bd77fd4981e796d05c10';
 
-fetch(url)
-  .then(function (responseObj) {
-    return responseObj.json();
-  })
-  .then(function (data) {
-    const html = `
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=imperial`;
+
+
+  fetch(url)
+
+    .then(function (responseObj) {
+      return responseObj.json();
+    })
+    .then(function (data) {
+      const html = `
     <h2>Temp ${data.main.temp}</h2>
     `;
-    const outputDiv = document.querySelector('.output');
+      const outputDiv = document.querySelector('.output');
 
-    outputDiv.innerHTML = html;
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+      outputDiv.innerHTML = html;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+weatherBtn.addEventListener('click', outputWeather);
 
 
 
