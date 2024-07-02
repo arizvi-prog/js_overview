@@ -11,7 +11,8 @@ body {
   padding: 5%;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -43,4 +44,10 @@ input {
 
 .output {
   margin-top: 35px;
+}
+
+.output div {
+  padding: 15px;
+  border: 1px solid #333;
+  margin-bottom: 5px;
 }

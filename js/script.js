@@ -1,50 +1,39 @@
-const weatherBtn = document.querySelector('#weather-btn');
+const charSelect = document.querySelector('#char-select');
+const searchBtn = document.querySelector('#search-btn');
 
-function outputWeather() {
-  const cityInput = document.querySelector('#city-input');
-  const apiKey = '0acc098a64b3bd77fd4981e796d05c10';
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=imperial`;
+function getCharacters() {
+  const baseUrl = 'https://swapi.dev/api/';
+  const option = charSelect.value;
+  const url = `${baseUrl}/${option}`;
 
+  console.log(url);
 
   fetch(url)
-
-    .then(function (responseObj) {
-      return responseObj.json();
+    .then(function (resObj) {
+      return resObj.json();
     })
     .then(function (data) {
-      const html = `
-    <h2>Temp ${data.main.temp}</h2>
-    `;
       const outputDiv = document.querySelector('.output');
 
-      outputDiv.innerHTML = html;
+      outputDiv.innerHTML = '';
+
+      data.results.forEach(function (char) {
+        outputDiv.insertAdjacentHTML('beforeend', `
+          <div>
+          <h3>${char.name}</h3>
+          <p>Birth Year : ${char.birth_year}</p>
+          </div>
+          `)
+      })
     })
-    .catch(function (error) {
-      console.log(error);
-    });
+    .then(function() {
+      alert('Data has been retrieved!');
+    })
 }
 
-weatherBtn.addEventListener('click', outputWeather);
+function init() {
+  searchBtn.addEventListener('click', getCharacters);
+}
 
-
-
-// fetch(url)
-//   .then(function (responseObj) {
-//     const data = responseObj.json();
-
-//     dataPromise.then(function (data) {
-//       console.log(data);
-//     });
-//   })
-//   .then(function () {
-//     console.log('two')
-//   })
-//   .then(function () {
-//     console.log('three')
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-
-// console.log('run this synchronos console log');
+init();
