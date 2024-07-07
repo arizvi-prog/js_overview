@@ -7,33 +7,22 @@ function getCharacters() {
   const option = charSelect.value;
   const url = `${baseUrl}/${option}`;
 
-  console.log(url);
+  $.get(url)
 
-  fetch(url)
-    .then(function (resObj) {
-      return resObj.json();
-    })
-    .then(function (data) {
-      const outputDiv = document.querySelector('.output');
+  .then(function(data){
+    const $outputDiv = $('.output');
 
-      outputDiv.innerHTML = '';
+    $outputDiv.empty();
+  })
 
       data.results.forEach(function (char) {
-        outputDiv.insertAdjacentHTML('beforeend', `
+        outputDiv.append(`
           <div>
           <h3>${char.name}</h3>
           <p>Birth Year : ${char.birth_year}</p>
           </div>
           `)
       })
-    })
-    .then(function() {
-      alert('Data has been retrieved!');
-    })
-}
-
-function init() {
-  searchBtn.addEventListener('click', getCharacters);
-}
+    }
 
 init();
