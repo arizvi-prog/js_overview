@@ -1,0 +1,53 @@
+/* RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+}
+
+body {
+  padding: 5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: #169cff;
+  color: #fff;
+  padding: 7px 15px;
+}
+
+input {
+  padding: 7px 10px;
+}
+
+/* GLOBAL/REUSABLE CLASSES */
+.text-center {
+  text-align: center;
+}
+
+.output {
+  margin-top: 35px;
+}
+
+.output div {
+  padding: 15px;
+  border: 1px solid #333;
+  margin-bottom: 5px;
+}
